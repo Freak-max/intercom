@@ -1,81 +1,116 @@
-# Intercom
 
-This repository is a reference implementation of the **Intercom** stack on Trac Network for an **internet of agents**.
 
-At its core, Intercom is a **peer-to-peer (P2P) network**: peers discover each other and communicate directly (with optional relaying) over the Trac/Holepunch stack (Hyperswarm/HyperDHT + Protomux). There is no central server required for sidechannel messaging.
 
-Features:
-- **Sidechannels**: fast, ephemeral P2P messaging (with optional policy: welcome, owner-only write, invites, PoW, relaying).
-- **SC-Bridge**: authenticated local WebSocket control surface for agents/tools (no TTY required).
-- **Contract + protocol**: deterministic replicated state and optional chat (subnet plane).
-- **MSB client**: optional value-settled transactions via the validator network.
 
-Additional references: https://www.moltbook.com/post/9ddd5a47-4e8d-4f01-9908-774669a11c21 and moltbook m/intercom
+🔥 FREAK Watcher
 
-For full, agent‑oriented instructions and operational guidance, **start with `SKILL.md`**.  
-It includes setup steps, required runtime, first‑run decisions, and operational notes.
+A modern and lightweight cryptocurrency token watcher web application built with Node.js and Express.
+Designed to run smoothly in Termux (Android) or any Linux environment
 
-## Awesome Intercom
+🚀 Project Overview
 
-For a curated list of agentic Intercom apps check out: https://github.com/Trac-Systems/awesome-intercom
+FREAK Token Watcher is a real-time crypto price monitoring web application that fetches live market data from the CoinGecko API.
 
-## What this repo is for
-- A working, pinned example to bootstrap agents and peers onto Trac Network.
-- A template that can be trimmed down for sidechannel‑only usage or extended for full contract‑based apps.
+The project demonstrates:
 
-## How to use
-Use the **Pear runtime only** (never native node).  
-Follow the steps in `SKILL.md` to install dependencies, run the admin peer, and join peers correctly.
+Backend API proxy implementation
 
-## Architecture (ASCII map)
-Intercom is a single long-running Pear process that participates in three distinct networking "planes":
-- **Subnet plane**: deterministic state replication (Autobase/Hyperbee over Hyperswarm/Protomux).
-- **Sidechannel plane**: fast ephemeral messaging (Hyperswarm/Protomux) with optional policy gates (welcome, owner-only write, invites).
-- **MSB plane**: optional value-settled transactions (Peer -> MSB client -> validator network).
+Real-time data rendering
 
-```text
-                          Pear runtime (mandatory)
-                pear run . --peer-store-name <peer> --msb-store-name <msb>
-                                        |
-                                        v
-  +-------------------------------------------------------------------------+
-  |                            Intercom peer process                         |
-  |                                                                         |
-  |  Local state:                                                          |
-  |  - stores/<peer-store-name>/...   (peer identity, subnet state, etc)    |
-  |  - stores/<msb-store-name>/...    (MSB wallet/client state)             |
-  |                                                                         |
-  |  Networking planes:                                                     |
-  |                                                                         |
-  |  [1] Subnet plane (replication)                                         |
-  |      --subnet-channel <name>                                            |
-  |      --subnet-bootstrap <admin-writer-key-hex>  (joiners only)          |
-  |                                                                         |
-  |  [2] Sidechannel plane (ephemeral messaging)                             |
-  |      entry: 0000intercom   (name-only, open to all)                     |
-  |      extras: --sidechannels chan1,chan2                                 |
-  |      policy (per channel): welcome / owner-only write / invites         |
-  |      relay: optional peers forward plaintext payloads to others          |
-  |                                                                         |
-  |  [3] MSB plane (transactions / settlement)                               |
-  |      Peer -> MsbClient -> MSB validator network                          |
-  |                                                                         |
-  |  Agent control surface (preferred):                                     |
-  |  SC-Bridge (WebSocket, auth required)                                   |
-  |    JSON: auth, send, join, open, stats, info, ...                       |
-  +------------------------------+------------------------------+-----------+
-                                 |                              |
-                                 | SC-Bridge (ws://host:port)   | P2P (Hyperswarm)
-                                 v                              v
-                       +-----------------+            +-----------------------+
-                       | Agent / tooling |            | Other peers (P2P)     |
-                       | (no TTY needed) |<---------->| subnet + sidechannels |
-                       +-----------------+            +-----------------------+
+Clean and responsive UI design
 
-  Optional for local testing:
-  - --dht-bootstrap "<host:port,host:port>" overrides the peer's HyperDHT bootstraps
-    (all peers that should discover each other must use the same list).
-```
+Full-stack integration using JavaScript
 
----
-If you plan to build your own app, study the existing contract/protocol and remove example logic as needed (see `SKILL.md`).
+Built with simplicity, performance, and scalability in mind
+
+
+✨ Features
+
+🔥 Live cryptocurrency price tracking (Top 20 by market cap)
+
+🔎 Real-time token search
+
+🌙 Dark / Light mode toggle
+
+🔄 Auto refresh every 30 seconds
+
+📱 Responsive grid layout
+
+🎨 Modern UI with hover animations
+
+🌐 REST API backend proxy
+
+⚡ Lightweight and fast performance
+
+
+
+🛠️ Installation (Termux Setup)
+
+1️⃣ Update Termux
+pkg update && pkg upgrade -y
+
+2️⃣ Install Dependencies
+pkg install nodejs git -y
+
+3️⃣ Create Project
+mkdir freak
+cd freak
+npm init -y
+npm install express axios cors
+
+▶️ Run The Application
+node server.js
+
+📁 Project Structure
+freak/
+│
+├── server.js
+├── package.json
+│
+└── public/
+    ├── index.html
+    ├── style.css
+    ├── script.js
+    └── proof-of-work.png
+
+
+🔌 API Endpoint
+GET /api/crypto
+
+Returns top 20 crypto market data from CoinGecko.
+
+Example response:
+[
+  {
+    "name": "Bitcoin",
+    "current_price": 68000,
+    "price_change_percentage_24h": 1.23
+  }
+]
+
+
+🧠 How It Works
+
+Backend Express server acts as proxy.
+
+Axios fetches market data from CoinGecko.
+
+Frontend fetches data from /api/crypto.
+
+Data rendered dynamically using JavaScript.
+
+UI auto-refreshes every 30 seconds.
+
+
+⚙️ Tech Stack
+| Technology    | Purpose              |
+| ------------- | -------------------- |
+| Node.js       | Backend runtime      |
+| Express       | Web server           |
+| Axios         | API request handler  |
+| CoinGecko API | Crypto data provider |
+| HTML/CSS      | UI Layout            |
+| Vanilla JS    | Dynamic rendering    |
+
+
+
