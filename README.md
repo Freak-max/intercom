@@ -84,7 +84,7 @@ Vanilla JavaScript
 
 
 1️⃣ Clone Repository
-git clone https://github.com/your-username/freak-token-watcher.git
+git clone https://github.com/freak-max/freak-token-watcher.git
 cd freak-token-watcher
 
 2️⃣ Install Dependencies
