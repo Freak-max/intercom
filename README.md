@@ -7,9 +7,12 @@
 A modern and lightweight cryptocurrency token watcher web application built with Node.js and Express.
 Designed to run smoothly in Termux (Android) or any Linux environment
 
+
 🚀 Project Overview
 
 FREAK Token Watcher is a real-time crypto price monitoring web application that fetches live market data from the CoinGecko API.
+
+
 
 The project demonstrates:
 
@@ -24,7 +27,10 @@ Full-stack integration using JavaScript
 Built with simplicity, performance, and scalability in mind
 
 
+
+
 ✨ Features
+
 
 🔥 Live cryptocurrency price tracking (Top 20 by market cap)
 
@@ -44,7 +50,10 @@ Built with simplicity, performance, and scalability in mind
 
 
 
+
+
 🛠️ Installation (Termux Setup)
+
 
 1️⃣ Update Termux
 pkg update && pkg upgrade -y
@@ -58,8 +67,11 @@ cd freak
 npm init -y
 npm install express axios cors
 
+
+
 ▶️ Run The Application
 node server.js
+
 
 📁 Project Structure
 freak/
@@ -74,10 +86,13 @@ freak/
     └── proof-of-work.png
 
 
+
 🔌 API Endpoint
 GET /api/crypto
 
+
 Returns top 20 crypto market data from CoinGecko.
+
 
 Example response:
 [
@@ -89,7 +104,10 @@ Example response:
 ]
 
 
+
+
 🧠 How It Works
+
 
 Backend Express server acts as proxy.
 
@@ -102,7 +120,11 @@ Data rendered dynamically using JavaScript.
 UI auto-refreshes every 30 seconds.
 
 
+
+
 ⚙️ Tech Stack
+
+
 | Technology    | Purpose              |
 | ------------- | -------------------- |
 | Node.js       | Backend runtime      |
