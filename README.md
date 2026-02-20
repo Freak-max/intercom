@@ -2,39 +2,40 @@ TRAC ADDRESS :
 trac1m0yr05s03upqqdnxmr6hutkpqj9lsyldhf9cx9hcvvzuznweexvsjfjmyq
 
 
-🔥 FREAK Watcher
-
-A modern and lightweight cryptocurrency token watcher web application built with Node.js and Express.
-Designed to run smoothly in Termux (Android) or any Linux environment
 
 
-🚀 Project Overview
+🔥 FREAK Token Watcher
 
-FREAK Token Watcher is a real-time crypto price monitoring web application that fetches live market data from the CoinGecko API.
+A modern, lightweight, and open-source cryptocurrency token watcher built with Node.js and Express.
+
+Real-time crypto price monitoring with a clean UI and production-ready backend architecture.
 
 
 
-The project demonstrates:
 
-Backend API proxy implementation
+🌍 About The Project
 
-Real-time data rendering
+FREAK Token Watcher is an open-source full-stack web application that displays real-time cryptocurrency prices using the CoinGecko API.
 
-Clean and responsive UI design
+This project is designed for:
 
-Full-stack integration using JavaScript
+Developers learning full-stack JavaScript
 
-Built with simplicity, performance, and scalability in mind
+Open-source contributors
 
+Portfolio projects
+
+Lightweight crypto dashboards
+
+Termux / Linux users
 
 
 
 ✨ Features
 
+🔥 Live Top 20 cryptocurrencies (by market cap)
 
-🔥 Live cryptocurrency price tracking (Top 20 by market cap)
-
-🔎 Real-time token search
+🔎 Real-time search filter
 
 🌙 Dark / Light mode toggle
 
@@ -42,97 +43,88 @@ Built with simplicity, performance, and scalability in mind
 
 📱 Responsive grid layout
 
-🎨 Modern UI with hover animations
+⚡ Backend caching for performance
 
-🌐 REST API backend proxy
+🔐 Production-ready security middleware
 
-⚡ Lightweight and fast performance
-
-
+🧱 Clean and scalable folder structure
 
 
 
-🛠️ Installation (Termux Setup)
+
+📸 Proof of Work
+
+Application running successfully:
 
 
-1️⃣ Update Termux
-pkg update && pkg upgrade -y
+
+
+
+🛠 Tech Stack
+
+Node.js
+
+Express.js
+
+Axios
+
+CoinGecko API
+
+HTML5
+
+CSS3
+
+Vanilla JavaScript
+
+
+
+
+
+📦 Installation
+
+
+1️⃣ Clone Repository
+git clone https://github.com/your-username/freak-token-watcher.git
+cd freak-token-watcher
 
 2️⃣ Install Dependencies
-pkg install nodejs git -y
-
-3️⃣ Create Project
-mkdir freak
-cd freak
-npm init -y
-npm install express axios cors
+npm install
 
 
+3️⃣ Run Application
+npm start
 
-▶️ Run The Application
-node server.js
+
 
 
 📁 Project Structure
-freak/
+
+
+freak-token-watcher/
 │
-├── server.js
+├── src/
+│   ├── server.js
+│   ├── routes/
+│   ├── services/
+│   └── middleware/
+│
+├── public/
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   └── proof-of-work.png
+│
+├── .env.example
 ├── package.json
-│
-└── public/
-    ├── index.html
-    ├── style.css
-    ├── script.js
-    └── proof-of-work.png
+└── README.md
+
+
 
 
 
 🔌 API Endpoint
 GET /api/crypto
 
-
-Returns top 20 crypto market data from CoinGecko.
-
-
-Example response:
-[
-  {
-    "name": "Bitcoin",
-    "current_price": 68000,
-    "price_change_percentage_24h": 1.23
-  }
-]
-
-
-
-
-🧠 How It Works
-
-
-Backend Express server acts as proxy.
-
-Axios fetches market data from CoinGecko.
-
-Frontend fetches data from /api/crypto.
-
-Data rendered dynamically using JavaScript.
-
-UI auto-refreshes every 30 seconds.
-
-
-
-
-⚙️ Tech Stack
-
-
-| Technology    | Purpose              |
-| ------------- | -------------------- |
-| Node.js       | Backend runtime      |
-| Express       | Web server           |
-| Axios         | API request handler  |
-| CoinGecko API | Crypto data provider |
-| HTML/CSS      | UI Layout            |
-| Vanilla JS    | Dynamic rendering    |
-
+Returns top 20 crypto assets by market capitalization.
 
 
