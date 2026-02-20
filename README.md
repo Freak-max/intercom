@@ -17,7 +17,9 @@ Real-time crypto price monitoring with a clean UI and production-ready backend a
 
 FREAK Token Watcher is an open-source full-stack web application that displays real-time cryptocurrency prices using the CoinGecko API.
 
+
 This project is designed for:
+
 
 Developers learning full-stack JavaScript
 
@@ -32,6 +34,7 @@ Termux / Linux users
 
 
 ✨ Features
+
 
 🔥 Live Top 20 cryptocurrencies (by market cap)
 
@@ -55,12 +58,15 @@ Termux / Linux users
 📸 Proof of Work
 
 Application running successfully:
+![Deskripsi Gambar](Screenshot_2026_0220_160521.jpg)
+
 
 
 
 
 
 🛠 Tech Stack
+
 
 Node.js
 
@@ -84,14 +90,17 @@ Vanilla JavaScript
 
 
 1️⃣ Clone Repository
+
 git clone https://github.com/freak-max/freak-token-watcher.git
 cd freak-token-watcher
 
 2️⃣ Install Dependencies
+
 npm install
 
 
 3️⃣ Run Application
+
 npm start
 
 
@@ -123,6 +132,7 @@ freak-token-watcher/
 
 
 🔌 API Endpoint
+
 GET /api/crypto
 
 Returns top 20 crypto assets by market capitalization.
